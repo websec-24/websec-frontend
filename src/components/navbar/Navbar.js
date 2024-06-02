@@ -27,6 +27,9 @@ const Navbar = () => {
               </li>
               {currentUser ? (
                     <>
+                    {currentUser.role === 'admin' && (
+                      <li><Link to="/add-product">Add product</Link></li>
+                    )}
                       <li><button onClick={handleLogout}>Logout</button></li>
                     </>
                 ) : (
