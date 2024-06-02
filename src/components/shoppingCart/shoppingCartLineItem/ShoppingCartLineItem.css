@@ -1,0 +1,39 @@
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    white-space: nowrap;
+}
+
+.product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 12ch; /* Limits the maximum width to 12 characters */
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.shopping-cart-line-item-remove-button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.shopping-cart-line-item-remove-button:hover {
+    background-color: #d32f2f;
+}

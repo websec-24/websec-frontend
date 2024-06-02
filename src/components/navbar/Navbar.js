@@ -1,4 +1,5 @@
 import React from 'react';
+import ShoppingCart from '../shoppingCart/shoppingCart/ShoppingCart';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import './Navbar.css';
@@ -21,6 +22,9 @@ const Navbar = () => {
             <ul className="navbar-links">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/products">Products</Link></li>
+              <li className="nav-item">
+                  <ShoppingCart/>
+              </li>
               {currentUser ? (
                     <>
                       <li><button onClick={handleLogout}>Logout</button></li>

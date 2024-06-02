@@ -1,0 +1,20 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shopping-cart-total {
+    margin-top: 30px;
+}
+
+.shopping-cart-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopping-cart-button {
+    height: 200;
+    width: 150px;
+}
+  
