@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 import './AddProducts.css';
 
 const AddProducts = () => {
@@ -10,6 +12,7 @@ const AddProducts = () => {
     const [isFormValid, setIsFormValid] = useState(false);
     const navigate = useNavigate();
 
+    const token = Cookies.get("jwt")
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -24,7 +27,8 @@ const AddProducts = () => {
           const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {
             method: "POST",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "authorization": token
             },
             credentials: 'include',
             body: JSON.stringify(newProduct)
@@ -76,7 +80,6 @@ const AddProducts = () => {
                     <label>Price:</label>
                     <input className="input-field"
                         type="number"
-                        value={price}
                         onChange={(e) => {
                           let priceValue = parseInt(e.target.value);
                           if (priceValue < 0) {
@@ -90,7 +93,6 @@ const AddProducts = () => {
                     <label>Quantity:</label>
                     <input className="input-field"
                         type="number"
-                        value={quantity}
                         onChange={(e) => {
                           let quantityValue = parseInt(e.target.value);
                           if (quantityValue < 0) {
