@@ -12,6 +12,7 @@ import AddProducts from './pages/addProducts/AddProducts';
 import Home from './pages/home/Home'
 
 function App() {
+  
     return (
       <AuthProvider>
         <ShoppingCartProvider>
