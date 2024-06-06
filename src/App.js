@@ -8,11 +8,12 @@ import Signup from './pages/signup/Signup'
 import Login from './pages/login/Login'
 import Products from './pages/products/Products';
 import AddProducts from './pages/addProducts/AddProducts';
+import Checkout from './pages/Checkout/Checkout.js'
 
 import Home from './pages/home/Home'
 
 function App() {
-  
+
     return (
       <AuthProvider>
         <ShoppingCartProvider>
@@ -24,6 +25,7 @@ function App() {
                           <Route path="/login" element={<Login />} />
                           <Route path="/signup" element={<Signup />} />
                           <Route path="/products" element={<Products />} />
+                          <Route path="/checkout" element={<Checkout />} />
                           <Route path="/add-product" element={
                             <PrivateRoute roles={['admin']}>
                               <AddProducts />

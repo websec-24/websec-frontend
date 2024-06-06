@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
 
 import './AddProducts.css';
 
@@ -12,7 +11,6 @@ const AddProducts = () => {
     const [isFormValid, setIsFormValid] = useState(false);
     const navigate = useNavigate();
 
-    const token = Cookies.get("jwt")
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -28,7 +26,6 @@ const AddProducts = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "authorization": token
             },
             credentials: 'include',
             body: JSON.stringify(newProduct)

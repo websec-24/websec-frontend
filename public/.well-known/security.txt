@@ -1,0 +1,8 @@
+Contact: https://websec.com/contact
+Contact: mailto:security@websec.com
+Preferred-Languages: en
+Encryption: https://services.websec.com/corporate/publickey.txt
+Acknowledgments: https://bughunters.websec.com/
+Policy: https://websec.com/vrp
+Hiring: https://websec.com/SecurityPrivacyEngJobs
+Expires: 2025-04-01T00:00:00z
