@@ -30,6 +30,12 @@ const Navbar = () => {
                     {currentUser.role === 'admin' && (
                       <li><Link to="/add-product">Add product</Link></li>
                     )}
+                    {currentUser.role === 'admin' && (
+                      <li><Link to="/admin-orders">Orders</Link></li>
+                    )} 
+                    {currentUser.role === 'customer' && (
+                      <li><Link to="/your-orders">Your Orders</Link></li>
+                    )}
                       <li><button onClick={handleLogout}>Logout</button></li>
                     </>
                 ) : (
