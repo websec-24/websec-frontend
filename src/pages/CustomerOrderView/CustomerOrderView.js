@@ -13,7 +13,7 @@ const CustomerOrderView = () => {
     useEffect(() => {
         async function fetchOrder() {
             try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/customer-order/${currentUser.email}/${orderNumber}`,{credentials: 'include',});
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/customer-order/${orderNumber}`,{credentials: 'include',});
             console.log(response);
             const data = await response.json();
             console.log(data);
@@ -83,7 +83,7 @@ const CustomerOrderView = () => {
         </tr>
       </thead>
       <tbody>
-        {orderLineItemData}
+      {orderLineItems.length > 0 ? orderLineItemData : <tr><td colSpan="7">No orders found</td></tr>}
       </tbody> 
     </table>
     </>

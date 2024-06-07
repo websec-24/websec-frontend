@@ -14,7 +14,7 @@ const CustomerOrders = () => {
     useEffect(() => {
         async function fetchOrders() {
             try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/customer-order/${currentUser.email}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/customer-order`, {
               credentials: 'include',
             });
             console.log(response);
@@ -29,8 +29,8 @@ const CustomerOrders = () => {
 
       fetchOrders();
   }, [currentUser])
-   
-  const orderData = orders.map(order =>{
+   console.log(orders)
+  const orderData = orders.map(order => {
     return <tr key={order.id} >
       <th> {order.orderNumber}</th>
         <td>{order.customerFirstName } {order.customerLastName}</td>
@@ -64,7 +64,7 @@ const CustomerOrders = () => {
         </tr>
       </thead>
       <tbody>
-        {orderData}
+      {orders.length > 0 ? orderData : <tr><td colSpan="7">No orders found</td></tr>}
       </tbody> 
     </table>
     </>

@@ -80,7 +80,7 @@ const ViewAdminOrder = () => {
         </tr>
       </thead>
       <tbody>
-        {orderLineItemData}
+      {orderLineItems.length > 0 ? orderLineItemData : <tr><td colSpan="7">No orders found</td></tr>}
       </tbody> 
     </table>
     </>

@@ -60,7 +60,7 @@ const AdminOrders = () => {
         </tr>
       </thead>
       <tbody>
-        {orderData}
+      {orders.length > 0 ? orderData : <tr><td colSpan="7">No orders found</td></tr>}
       </tbody> 
     </table>
     </>
