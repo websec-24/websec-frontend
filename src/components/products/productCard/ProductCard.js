@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
     }
 
     return (
-        <div className="product-card" onClick={goToProduct}>
+        <div className="product-card">
             <div className="product-card-image-container">
                 <img src={testImage} alt="Product image" />
             </div>
@@ -60,8 +60,8 @@ const ProductCard = ({ product }) => {
                 
             </div>
             <div className="product-card-add-to-cart-button-container">
-                <button onClick={addToCart}>Add to cart</button>
-                
+                <button className="product-card-add-to-cart-button" onClick={addToCart}>Add to cart</button>
+                <button className="product-card-go-to-product-button" onClick={goToProduct}>View product</button>   
             </div>        
         </div>
     )

@@ -49,7 +49,7 @@ const ProductReviewForm = ({ onSubmit }) => {
         ></textarea>
       </div>
       <div>
-        <label>Upload File:</label>
+        <label>Upload image(maximum size 10mb):</label>
         <input
           type="file"
           accept=".jpg,.jpeg,.png"
