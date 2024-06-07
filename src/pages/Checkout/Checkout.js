@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import CheckoutLineItem from '../../components/CheckoutLineItem/CheckoutLineItem.js';
 import toastr from 'toastr';
 import Button from 'react-bootstrap/Button';
+import { useAuth } from '../../contexts/AuthContext';
 
 
 const Checkout = () => {
@@ -16,6 +17,7 @@ const Checkout = () => {
         address: '',
         city: ''
     });
+    const { currentUser } = useAuth();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,7 +27,7 @@ const Checkout = () => {
         });
     };
     
-    const isFormFilled = formData.postalCode && formData.address && formData.city && formData.firstName && formData.lastName && formData.email;
+    const isFormFilled = formData.postalCode && formData.address && formData.city && formData.firstName && formData.lastName ;
 
     async function createCheckoutSession(e) {
         e.preventDefault();
@@ -40,7 +42,7 @@ const Checkout = () => {
           customer: {
             firstName: formData.firstName,
             lastName: formData.lastName,
-            email: formData.email,
+            email: currentUser.email,
             city: formData.city,
             postalCode: formData.postalCode,
             address: formData.address,
@@ -119,11 +121,6 @@ const Checkout = () => {
                 <div className="checkout-form-group">
                     <label className="checkout-form-label" htmlFor="lastName">Last Name:</label>
                     <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} />
-                </div>
-
-                <div className="checkout-form-group">
-                    <label className="checkout-form-label" htmlFor="email">Email:</label>
-                    <input type="text" id="email" name="email" value={formData.email} onChange={handleChange} />
                 </div>
 
                 <div className="checkout-form-group">
