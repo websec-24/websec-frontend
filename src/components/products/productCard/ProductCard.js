@@ -2,10 +2,16 @@ import './ProductCard.css';
 import testImage from '../../../assets/products/sunglasses.jpg'
 import { useShoppingCart } from '../../../contexts/ShoppingCartContext';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
+    const navigate = useNavigate();
     const { addItemToCart } = useShoppingCart();
     const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+    const goToProduct = () => {
+        navigate(`/products/${product.id}`)
+    }
 
     const incrementQuantity = () => {
         setSelectedQuantity(prevQuantity => prevQuantity + 1);
@@ -32,7 +38,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product-card">
             <div className="product-card-image-container">
-                <img className="nav-logo" src={testImage} alt="Site Logo" />
+                <img src={testImage} alt="Product image" />
             </div>
 
             <div className="product-card-information-container">
@@ -54,8 +60,8 @@ const ProductCard = ({ product }) => {
                 
             </div>
             <div className="product-card-add-to-cart-button-container">
-                <button onClick={addToCart}>Add to cart</button>
-                
+                <button className="product-card-add-to-cart-button" onClick={addToCart}>Add to cart</button>
+                <button className="product-card-go-to-product-button" onClick={goToProduct}>View product</button>   
             </div>        
         </div>
     )
