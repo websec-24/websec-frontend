@@ -6,6 +6,7 @@ import PrivateRoute from './components/privateRoute/PrivateRoute';
 import Navbar from './components/navbar/Navbar';
 import Signup from './pages/signup/Signup'
 import Login from './pages/login/Login'
+import Product from './pages/product/Product'
 import Products from './pages/products/Products';
 import AddProducts from './pages/addProducts/AddProducts';
 import Checkout from './pages/Checkout/Checkout.js'
@@ -26,10 +27,12 @@ function App() {
                           <Route path="/signup" element={<Signup />} />
                           <Route path="/products" element={<Products />} />
                           <Route path="/checkout" element={<Checkout />} />
+                          <Route path="/products/:productId" element={<Product />} />
                           <Route path="/add-product" element={
                             <PrivateRoute roles={['admin']}>
                               <AddProducts />
                             </PrivateRoute>} />
+                          
                       </Routes>
               </div>
           </Router>
