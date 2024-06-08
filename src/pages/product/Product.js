@@ -41,7 +41,6 @@ const Product = () => {
     
           const data = await response.json();
           console.log(data);
-
         } catch (error) {
           console.error('Error submitting review:', error.message);
         }
@@ -72,7 +71,6 @@ const Product = () => {
                         <img src={`${process.env.REACT_APP_IMAGE_URL}/product-review-images/${productReview.imageUrl}`} alt="Review image" className="review-image" />
                     </div>
                 </div>
-
             ))}
             <ProductReviewForm onSubmit={handleSubmit}></ProductReviewForm>
             </div>   

@@ -12,7 +12,7 @@ th {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 12ch; /* Limits the maximum width to 12 characters */
+    max-width: 12ch;
 }
 
 tr:hover {

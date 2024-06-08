@@ -48,9 +48,7 @@ const Checkout = () => {
             address: formData.address,
           }
         }
-  
-        console.log(orderDetails);
-  
+    
         try {
           const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/checkout`, {
             method: "POST",

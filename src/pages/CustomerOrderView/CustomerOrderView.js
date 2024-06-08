@@ -14,9 +14,7 @@ const CustomerOrderView = () => {
         async function fetchOrder() {
             try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/customer-order/${orderNumber}`,{credentials: 'include',});
-            console.log(response);
             const data = await response.json();
-            console.log(data);
             setOrder(data);
             setOrderLineItems(data.OrderLineItems)
             }

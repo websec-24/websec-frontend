@@ -7,7 +7,6 @@ import './Navbar.css';
 const Navbar = () => {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
-
   const handleLogoClick = () => navigate("/");
   const handleLogout = () => {
     logout();

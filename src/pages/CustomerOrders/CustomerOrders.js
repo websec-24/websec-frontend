@@ -7,8 +7,6 @@ import { useAuth } from '../../contexts/AuthContext';
 
 const CustomerOrders = () => {
     const { currentUser } = useAuth();
-    console.log(currentUser)
-
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -17,9 +15,7 @@ const CustomerOrders = () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/customer-order`, {
               credentials: 'include',
             });
-            console.log(response);
             const data = await response.json();
-            console.log(data);
             setOrders(data);
             }
             catch(error) {
@@ -29,7 +25,6 @@ const CustomerOrders = () => {
 
       fetchOrders();
   }, [currentUser])
-   console.log(orders)
   const orderData = orders.map(order => {
     return <tr key={order.id} >
       <th> {order.orderNumber}</th>
@@ -45,9 +40,6 @@ const CustomerOrders = () => {
           
       </tr>
   })
-     
-  
-
 
   return (
     <>
