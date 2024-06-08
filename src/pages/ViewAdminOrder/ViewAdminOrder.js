@@ -13,7 +13,7 @@ const ViewAdminOrder = () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/order-number/${orderNumber}`,{credentials: 'include',});
             const data = await response.json();
             setOrder(data);
-            setOrderLineItems(data.OrderLineItems)
+            setOrderLineItems(data.order_line_items)
             }
             catch(error) {
             console.log(error);
