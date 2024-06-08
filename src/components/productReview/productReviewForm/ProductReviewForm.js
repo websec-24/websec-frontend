@@ -4,6 +4,7 @@ const ProductReviewForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     title: '',
     text: '',
+    isAnonymous: false,
     file: null,
   });
 
@@ -21,8 +22,14 @@ const ProductReviewForm = ({ onSubmit }) => {
       file: e.target.files[0],
     }));
   };
+  const handleCheckBoxOnChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      isAnonymous: e.target.checked,
+    }));
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     onSubmit(formData);
   };
@@ -47,6 +54,16 @@ const ProductReviewForm = ({ onSubmit }) => {
           onChange={handleChange}
           required
         ></textarea>
+      </div>
+      <div>
+        <label>Do you want to hide your email?   </label>
+        <input
+          type='checkbox'
+          name="isAnonymous"
+          value={formData.isAnonymous}
+          onChange={handleCheckBoxOnChange}
+          
+        ></input>
       </div>
       <div>
         <label>Upload image(maximum size 10mb):</label>

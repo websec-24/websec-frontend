@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product-card">
             <div className="product-card-image-container">
-                <img src={testImage} alt="Product image" />
+                <img src={testImage} alt="Product" />
             </div>
 
             <div className="product-card-information-container">

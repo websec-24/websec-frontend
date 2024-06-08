@@ -21,15 +21,16 @@ const Product = () => {
       }
 
       fetchProductWithReviews();
-  }, [])
+  }, [productId])
 
     const handleSubmit = async (formData) => {
         try {
-          const { title, text, file } = formData;
+          const { title, text, isAnonymous, file } = formData;
     
           const formDataToSend = new FormData();
           formDataToSend.append('title', title);
           formDataToSend.append('text', text);
+          formDataToSend.append('isAnonymous', isAnonymous);
           formDataToSend.append('file', file);
     
           const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/products/${productId}/reviews`, {
